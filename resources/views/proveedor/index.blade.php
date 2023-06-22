@@ -1,15 +1,15 @@
 @extends('layouts.plantilla')
-@section('title', 'Categorias')
+@section('title', 'Proveedores')
 @section('content')
-    <h1>Pagina principal de categorias</h1>
-    <a href="{{ route('categorias.create') }}">Crear Categoria</a>
+    <h1>Pagina principal de proveedores</h1>
+    <a href="{{ route('proveedores.create') }}">Crear Proveedor</a>
     <ul>
-        @foreach ($categorias as $categoria)
-            <p>{{ $categoria->nombre }}, {{ $categoria->descripcion }}
-                <a href="{{ route('categorias.show', $categoria) }}">ver</a>
-                <a href="{{ route('categorias.edit', $categoria) }}">editar</a>
+        @foreach ($proveedores as $proveedor)
+            <p>{{ $proveedor->nombre }}, {{ $proveedor->apellido }}
+                <a href="{{ route('proveedores.show', $proveedor) }}">ver</a>
+                <a href="{{ route('proveedores.edit', $proveedor) }}">editar</a>
             </p>
         @endforeach
     </ul>
-    {{ $categorias->links() }}
+    {{ $proveedores->links() }}
 @endsection

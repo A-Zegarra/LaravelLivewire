@@ -6,11 +6,13 @@ namespace Database\Seeders;
 
 use App\Models\Categoria;
 use App\Models\Cliente;
+use App\Models\Compra;
 use App\Models\Comprobante;
 use App\Models\Contenedor;
 use App\Models\Detalle_Contenedor;
 use App\Models\Detalle_Usuario;
 use App\Models\Ingreso;
+use App\Models\Medida;
 use App\Models\Producto;
 use App\Models\Proveedor;
 use App\Models\Rol;
@@ -43,6 +45,8 @@ class DatabaseSeeder extends Seeder
         Rol::factory(10)->create();
         Detalle_Usuario::factory(10)->create();
         Comprobante::factory(10)->create();
+        Medida::factory(10)->create();
+        Compra::factory(10)->create();
 
 
     }

@@ -23,7 +23,7 @@ class StoreCliente extends FormRequest
     {
         return [
             'nombre' => 'required',
-            'apellidos' => 'required'
+            'apellido' => 'required'
         ];
     }
 

@@ -9,11 +9,10 @@ class Cliente extends Model
 {
     use HasFactory;
     protected $fillable = ['nombre', 'apellido','razonsocial','documento','telefono','correo','pais','ciudad'];
-    
     protected $guarded = [];
 
-    public function getRouteKeyName()
+    /*public function getRouteKeyName()
     {
         return 'slug';
-    }
+    }*/
 }

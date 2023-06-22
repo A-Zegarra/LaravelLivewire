@@ -1,14 +1,14 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Categoria' . $categoria->nombre)
+@section('title', 'Proveedor' . $proveedor->nombre)
 
 @section('content')
-    <h1>BIENVENIDO AL CURSO {{ $categoria->nombre }}</h1>
-    <a href="{{ route('categorias.index') }}">Volver a categorias</a>
-    <a href="{{ route('categorias.edit', $categoria) }}">Editar</a>
-    <p><strong>Categoria:</strong>{{ $categoria->descripcion }}</p>
+    <h1>BIENVENIDO AL CURSO {{ $proveedor->nombre }}</h1>
+    <a href="{{ route('proveedores.index') }}">Volver a proveedores</a>
+    <a href="{{ route('proveedores.edit', $proveedor) }}">Editar</a>
+    <p><strong>Cliente:</strong>{{ $proveedor->descripcion }}</p>
 
-    <form action="{{ route('categorias.destroy', $categoria) }}" method="POST">
+    <form action="{{ route('proveedores.destroy', $proveedor) }}" method="POST">
         @csrf
         @method('delete')
         <button type="submit">Eliminar</button>

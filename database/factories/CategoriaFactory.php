@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
  */
 class CategoriaFactory extends Factory
 {
-    
+
     /**
      * Define the model's default state.
      *
@@ -18,12 +18,12 @@ class CategoriaFactory extends Factory
      */
     public function definition(): array
     {
-        $nombre = $this->faker->sentence();
+        $nombre = $this->faker->name();
 
         return [
             'nombre' => $nombre,
             'descripcion' => $this->faker->sentence(),
-            'slug'=>Str::slug($nombre, '-')
+            'slug' => Str::slug($nombre, '-')
         ];
     }
 }

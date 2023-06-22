@@ -13,13 +13,25 @@ return new class extends Migration
     {
         Schema::create('comprobantes', function (Blueprint $table) {
             $table->id();
+            $table->enum('tipo_documento', ['factura', 'boleta', 'nota']);
+            $table->date('fecha');
+            $table->string('serie');
+            $table->unsignedInteger('numero');
+            $table->string('moneda');
+            $table->string('ruc');
+            $table->enum('tipo_cliente', ['persona', 'empresa']);
+            $table->string('nombre_cliente');
+            $table->string('direccion_cliente');
+            $table->string('celular_cliente');
+            $table->decimal('descuento', 8, 2);
+            $table->enum('metodo_pago', ['efectivo', 'tarjeta']);
+            $table->text('observaciones');
+            $table->decimal('total', 8, 2);
+            $table->timestamps();
+
             $table->foreignId('id_tipocomprobante')->nullable()->constrained('tipo_comprobantes')->cascadeOnUpdate()->nullOnDelete();
             $table->foreignId('id_cliente')->nullable()->constrained('clientes')->cascadeOnUpdate()->nullOnDelete();
             $table->foreignId('id_usuario')->nullable()->constrained('users')->cascadeOnUpdate()->nullOnDelete();
-            $table->date('fecha');
-            $table->time('hora');
-            $table->decimal('total',8,2);
-            $table->timestamps();
         });
     }
 

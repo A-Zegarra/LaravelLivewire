@@ -8,5 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Proveedor extends Model
 {
     use HasFactory;
+    protected $fillable = ['nombre', 'apellido','razonsocial','documento','telefono','correo','pais','ciudad'];
+    protected $guarded = [];
+
+    /*public function getRouteKeyName()
+    {
+        return 'slug';
+    }*/
     protected $table = "proveedores";
 }

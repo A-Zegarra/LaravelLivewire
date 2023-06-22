@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_producto')->nullable()->constrained('productos')->cascadeOnUpdate()->nullOnDelete();
             $table->foreignId('id_contenedor')->nullable()->constrained('contenedores')->cascadeOnUpdate()->nullOnDelete();
+            $table->integer('cantidad');
+            $table->decimal('costo', 8, 2);
             $table->timestamps();
         });
     }
